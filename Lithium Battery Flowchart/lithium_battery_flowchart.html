@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lithium Battery Sustainability & Ethics Flowchart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('forest2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(6px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.10)), url('forrest2.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 15px;
+            color: #fff;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+            transition: transform 0.3s ease;
+            margin: 0 0 18px 0;
+        }
+        .section:nth-of-type(even) {
+            background: #f8f9fa;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .stakeholders {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stakeholder {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #f39c12;
+        }
+
+        .stakeholder:hover {
+            transform: scale(1.05);
+        }
+
+        .promise-box {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .promise-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .promise-item .icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .lifecycle-phase {
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 6px solid #9b59b6;
+            padding: 25px;
+        }
+
+        .phase-header {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phase-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            background: #9b59b6;
+        }
+
+        .perspective {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .dt-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .dt-step {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .dt-step .step-number {
+            background: #f39c12;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+        }
+
+        .insights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .insight {
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            background: linear-gradient(rgba(30,30,30,0.55), rgba(30,30,30,0.55)), url('lightbulb.jpg') no-repeat center center;
+            background-size: cover;
+            transition: transform 0.3s ease;
+        }
+        .insight:hover {
+            transform: scale(1.05);
+        }
+        .insight.social, .insight.design, .insight.strategy {
+            background: linear-gradient(rgba(30,30,30,0.55), rgba(30,30,30,0.55)), url('lightbulb.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .conclusion {
+            background: none;
+            color: #222;
+            padding: 0;
+            border-radius: 15px;
+            text-align: left;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .conclusion-flex {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .conclusion-text {
+            flex: 1 1 0;
+            color: #222;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .conclusion-img {
+            flex: 0 0 320px;
+            width: 320px;
+            max-width: 40vw;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        }
+        @media (max-width: 900px) {
+            .conclusion-flex {
+                flex-direction: column;
+                gap: 18px;
+                padding: 18px;
+            }
+            .conclusion-img {
+                width: 100%;
+                max-width: 100%;
+            }
+            .conclusion-text {
+                text-align: left;
+            }
+        }
+
+        .solutions-grid {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            margin: 25px 0;
+        }
+        .solution-card {
+            border-radius: 15px;
+            padding: 22px 18px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-height: 120px;
+        }
+
+        .solution-category {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #3498db;
+        }
+
+        .solution-category h3 {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .solution-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .arrow, .flow-arrow {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            height: 40px;
+        }
+        .arrow::before, .flow-arrow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background: #333;
+            border-radius: 1px;
+        }
+        .arrow::after, .flow-arrow::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 12px solid #333;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 20px 0;
+        }
+        .promise-card {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            border-radius: 15px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .promise-card .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .promise-card.promise-green {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        .promise-card.promise-blue {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        .promise-card.promise-yellow {
+            background: linear-gradient(135deg, #f9d423, #ffb347);
+            color: #333;
+        }
+
+        .stakeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stakeholder-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .stakeholder-card:hover {
+            transform: scale(1.05);
+        }
+        .victims {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+        }
+        .corporations {
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+        }
+        .consumers {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+        }
+        .stakeholder-card.victims {
+            background: linear-gradient(rgba(60,40,20,0.55), rgba(60,40,20,0.55)), url('local_communities.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .stakeholder-card.corporations {
+            background: linear-gradient(rgba(60,40,20,0.55), rgba(60,40,20,0.55)), url('corporations.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .stakeholder-card.consumers {
+            background: linear-gradient(rgba(60,40,20,0.55), rgba(60,40,20,0.55)), url('consumers.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* Lifecycle grid and card styles */
+        .lifecycle-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .lifecycle-card {
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+            padding: 0 0 20px 0;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            min-width: 0;
+        }
+        .lifecycle-card .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 24px 24px 10px 24px;
+            border-radius: 18px 18px 0 0;
+        }
+        .lifecycle-card .phase-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: rgba(255,255,255,0.18);
+        }
+        .lifecycle-card .phase-content {
+            padding: 18px 24px 0 24px;
+            background: rgba(255,255,255,0.10);
+            border-radius: 0 0 18px 18px;
+        }
+        .lifecycle-card.mining {
+            background: linear-gradient(rgba(60,40,20,0.55), rgba(60,40,20,0.55)), url('mining.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .lifecycle-card.production {
+            background: linear-gradient(rgba(40,60,80,0.55), rgba(40,60,80,0.55)), url('battery.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .lifecycle-card.consumption {
+            background: linear-gradient(rgba(30,60,60,0.55), rgba(30,60,60,0.55)), url('ev.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .lifecycle-card.disposal {
+            background: linear-gradient(rgba(60,60,60,0.55), rgba(60,60,60,0.55)), url('ewaste.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        @media (min-width: 700px) {
+            .analysis-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .analysis-card {
+            background: rgba(255,255,255,0.85);
+            color: #333;
+            border-radius: 12px;
+            padding: 18px 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            min-width: 0;
+            transition: transform 0.3s ease;
+        }
+        .analysis-card:hover {
+            transform: scale(1.05);
+            background: #ff9800;
+            color: #fff;
+        }
+        .analysis-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.08rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .analysis-card ul {
+            padding-left: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .main-question, .header h1 {
+                font-size: 1.8rem;
+            }
+            .flowchart {
+                gap: 15px;
+            }
+            .dt-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stakeholders {
+                grid-template-columns: 1fr;
+            }
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .solution-card.soln-red,
+        .solution-card.soln-blue,
+        .solution-card.soln-green {
+            background: #fff;
+            color: #111;
+        }
+        .solution-card .issue {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .solution-card .solution {
+            font-weight: normal;
+        }
+        .insight, .insight.social, .insight.design, .insight.strategy {
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            background: linear-gradient(rgba(30,30,30,0.55), rgba(30,30,30,0.55)), url('lightbulb.jpg') no-repeat center center !important;
+            background-size: cover !important;
+            background-color: #222;
+        }
+        /* Add this CSS for the Call to Action background */
+        .call-to-action {
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('call_to_action.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .call-to-action .cta-action-box {
+            color: #111;
+        }
+        .cta-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin: 24px auto 0 auto;
+            max-width: 100%;
+        }
+        .cta-action-box {
+            background: rgba(255,255,255,0.85);
+            color: #111;
+            border-radius: 14px;
+            padding: 12px 18px;
+            font-size: 1.08em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            min-width: 0;
+            white-space: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .cta-action-box:hover {
+            transform: scale(1.05);
+            background: #27ae60;
+            color: #fff;
+        }
+        @media (max-width: 1200px) {
+            .cta-actions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 700px) {
+            .cta-actions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cta-subtext {
+            margin-top: -12px;
+        }
+        .cta-header-group {
+            margin-top: -18px;
+        }
+        .phase-icon, .icon {
+            display: none !important;
+        }
+        /* Solutions Framework custom backgrounds */
+        .solutions-grid {
+            background: #fff;
+            border-radius: 18px;
+            padding: 20px 0;
+        }
+        .solution-card {
+            background: #111;
+            color: #fff;
+            text-shadow: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        /* Assign a unique portion of the image to each solution card in a 3x3 grid, with specific swaps for correct orientation */
+        /* Immediate Impact Solutions */
+        .solution-card.soln-red:nth-of-type(1)::before { background-position: left top; } /* Child Labor */
+        .solution-card.soln-red:nth-of-type(2)::before { background-position: left center; } /* Poverty Wages */
+        .solution-card.soln-red:nth-of-type(3)::before { background-position: left bottom; } /* Safety Hazards */
+        /* Systematic Reform Solutions */
+        .solution-card.soln-blue:nth-of-type(1)::before { background-position: center top; } /* Supply Chain Opacity */
+        .solution-card.soln-blue:nth-of-type(2)::before { background-position: center center; } /* Economic Dependence */
+        .solution-card.soln-blue:nth-of-type(3)::before { background-position: center bottom; } /* Environmental Damage */
+        /* Innovation-Driven Solutions */
+        .solution-card.soln-green:nth-of-type(1)::before { background-position: right top; } /* Cobalt Dependence */
+        .solution-card.soln-green:nth-of-type(2)::before { background-position: right center; } /* Waste Generation (swapped with Global Inequality) */
+        .solution-card.soln-green:nth-of-type(3)::before { background-position: right bottom; } /* Global Inequality (swapped with Waste Generation) */
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('solutions_bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 300% 300%;
+            opacity: 0.55;
+            z-index: 0;
+        }
+        .solution-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        /* Remove per-box backgrounds */
+        .solution-card.soln-red:nth-of-type(1),
+        .solution-card.soln-red:nth-of-type(2),
+        .solution-card.soln-red:nth-of-type(3),
+        .solution-card.soln-blue:nth-of-type(1),
+        .solution-card.soln-blue:nth-of-type(2),
+        .solution-card.soln-blue:nth-of-type(3),
+        .solution-card.soln-green:nth-of-type(1),
+        .solution-card.soln-green:nth-of-type(2),
+        .solution-card.soln-green:nth-of-type(3) {
+            /* background: none; */
+            /* color: #111; */
+        }
+        .promise-card.promise-green:first-of-type {
+            background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('climate_solution_car.jpg') no-repeat center center;
+            background-size: cover;
+            color: #222;
+        }
+        .promise-card.promise-blue:first-of-type {
+            background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('fossil_fuel_alternative.jpg') no-repeat center center;
+            background-size: cover;
+            color: #222;
+        }
+        .promise-card.promise-blue:nth-of-type(2) {
+            background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('fossil_fuel_alternative.jpg') no-repeat center center;
+            background-size: cover;
+            color: #222;
+        }
+        .promise-card.promise-yellow:nth-of-type(3) {
+            background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('clean_energy_storage.jpg') no-repeat center center;
+            background-size: cover;
+            color: #222;
+        }
+        .promise-card.promise-green:first-of-type,
+        .promise-card.promise-blue:nth-of-type(2),
+        .promise-card.promise-yellow:nth-of-type(3) {
+            color: #111;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+        }
+        .promise-card,
+        .solution-card {
+            transition: transform 0.3s ease;
+        }
+        .promise-card:hover,
+        .solution-card:hover {
+            transform: scale(1.05);
+        }
+        /* Remove background image from solution-card */
+        .solution-card::before {
+            display: none !important;
+        }
+        /* Style for the new image in Solutions Framework */
+        .solutions-framework-img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 18px;
+            margin: 18px 0 28px 0;
+            display: block;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            object-fit: cover;
+            height: 540px;
+        }
+        .solution-card:hover {
+            transform: scale(1.05);
+            background: #2196f3;
+            color: #fff;
+        }
+        .solution-card:hover,
+        .promise-card:hover,
+        .cta-action-box:hover,
+        .insight:hover,
+        .analysis-card:hover {
+            box-shadow: 0 8px 32px rgba(33, 150, 243, 0.25), 0 2px 16px rgba(0,0,0,0.18);
+        }
+        .intro-flex {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            margin-bottom: 18px;
+        }
+        .intro-img {
+            flex: 0 0 260px;
+            width: 260px;
+            max-width: 40vw;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        }
+        .intro-text {
+            flex: 1 1 0;
+            color: #222;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        @media (max-width: 900px) {
+            .intro-flex {
+                flex-direction: column;
+                gap: 18px;
+                padding: 18px;
+            }
+            .intro-img {
+                width: 100%;
+                max-width: 100%;
+            }
+            .intro-text {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Are Lithium Batteries Truly Sustainable & Ethical?</h1>
+            <p>A Comprehensive Hybrid Thinking Analysis of the Cobalt Mining Lifecycle by David Daniels</p>
+        </div>
+        
+        <div class="flowchart">
+            
+            <!-- Intro Section for Jump Associates -->
+            <div class="section intro-flex">
+                <img src="jump_intro.jpg" alt="Jump Associates Intro" class="intro-img" />
+                <div class="intro-text">
+                    <p>Dear Jump Associates,</p>
+                    <br>
+                    <p>I have recently picked up the hobby of building websites in my free time, and since I still need practice, I built this website to visually communicate a research paper I wrote titled <strong>Cobalt: More Harm than Good?</strong> A paper that I feel demonstrates my hybrid thinking ability. The original research paper incorporates thought processes from social science, design, and business (governmental) strategy, which I have highlighted throughout this website. Please enjoy!</p>
+                    <br>
+                    <p>- David</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">The Promise of Environmental Benefits</div>
+                <div class="promise-grid">
+                    <div class="promise-card promise-green">
+                        <div class="icon"></div>
+                        <strong>Climate Solution</strong><br>
+                        Electric vehicles reduce CO₂ emissions
+                    </div>
+                    <div class="promise-card promise-blue">
+                        <div class="icon"></div>
+                        <strong>Fossil Fuel Alternative</strong><br>
+                        Decreases dependence on oil
+                    </div>
+                    <div class="promise-card promise-yellow">
+                        <div class="icon"></div>
+                        <strong>Clean Energy Storage</strong><br>
+                        Essential for renewable energy systems
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title"><div class="icon"></div> Who's Involved?</div>
+                <div class="stakeholder-grid">
+                    <div class="stakeholder-card victims">
+                        <h3>Local Communities<br>Democratic Republic of Congo</h3>
+                        <p><strong>150,000+ "Crueseurs"</strong><br>
+                        Artisanal miners living in poverty<br>
+                        60% of DRC households depend on unsafe mining<br>
+                        73% live on $1.90/day (extreme poverty)</p>
+                    </div>
+                    <div class="stakeholder-card corporations">
+                        <h3>Major Corporations</h3>
+                        <p><strong>Tech Giants:</strong> Apple, Tesla, Google<br>
+                        <strong>Mining Companies:</strong> Glencore, China Molybdenum<br>
+                        Use cobalt in batteries and electronics<br>
+                        Profit billions while miners receive pennies</p>
+                    </div>
+                    <div class="stakeholder-card consumers">
+                        <h3>Global Consumers</h3>
+                        <p><strong>Ex. EV & Smartphone Users</strong><br>
+                        Often unaware of supply chain issues<br>
+                        Drive demand for cobalt-containing products<br>
+                        Face climate vs. justice dilemma</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Lithium Battery Lifecycle Analysis</div>
+                <div class="lifecycle-grid">
+                    <div class="lifecycle-card mining">
+                        <div class="phase-header"><div class="phase-icon"></div>Phase 1: Mining (DRC Cobalt Extraction)</div>
+                        <div class="phase-content">
+                            <div class="analysis-grid">
+                                <div class="analysis-card">
+                                    <h4>Social Science Perspective</h4>
+                                    <p><strong>Environmental Injustice Identified:</strong></p>
+                                    <ul>
+                                        <li>73% live on $1.90/day (extreme poverty)</li>
+                                        <li>40,000 children in dangerous mining</li>
+                                        <li>Communities of color bear disproportionate burden</li>
+                                        <li>150,000+ artisanal miners exploited</li>
+                                        <li>Economic Inequity: Miners receive pennies while tech companies profit billions</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Design Thinking Analysis</h4>
+                                    <ul>
+                                        <li><strong>Clarify:</strong> Miners face life-threatening conditions for survival wages</li>
+                                        <li><strong>Ideate:</strong> How might we ensure safe, fair mining practices?</li>
+                                        <li><strong>Develop:</strong> Test safety protocols, wage standards, child protection</li>
+                                        <li><strong>Implement:</strong> Legalized Artisanal and small-scale mining (ASM) with proper oversight</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Governmental Strategy</h4>
+                                    <p><strong>Current Challenge:</strong> DRC government economically dependent on mining (⅓ of GDP)</p>
+                                    <p><strong>Strategic Options:</strong></p>
+                                    <ul>
+                                        <li>Regulate rather than ban ASM mining</li>
+                                        <li>Implement safety standards & worker rights</li>
+                                        <li>Create economic diversification programs</li>
+                                        <li>Partner with international organizations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lifecycle-card production">
+                        <div class="phase-header"><div class="phase-icon"></div>Phase 2: Battery Production & Manufacturing</div>
+                        <div class="phase-content">
+                            <div class="analysis-grid">
+                                <div class="analysis-card">
+                                    <h4>Social Science Perspective</h4>
+                                    <p><strong>Global Supply Chain Injustice:</strong></p>
+                                    <ul>
+                                        <li>Value extraction: Raw materials cheap, finished products expensive</li>
+                                        <li>Geographic inequality: Harm in Global South, benefits in Global North</li>
+                                        <li>Corporate responsibility gap in supply chain transparency</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Design Thinking Analysis</h4>
+                                    <ul>
+                                        <li><strong>Clarify:</strong> Companies like Tesla, Apple need ethical sourcing</li>
+                                        <li><strong>Ideate:</strong> How might we create transparent, ethical supply chains?</li>
+                                        <li><strong>Develop:</strong> Blockchain tracking, ethical certification systems</li>
+                                        <li><strong>Implement:</strong> Fair Cobalt Alliance partnerships</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Governmental Strategy</h4>
+                                    <p><strong>Regulatory Opportunities:</strong></p>
+                                    <ul>
+                                        <li>Mandatory supply chain disclosure laws</li>
+                                        <li>Import restrictions on unethically sourced materials</li>
+                                        <li>International agreements on mining standards</li>
+                                        <li>Corporate accountability legislation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lifecycle-card consumption">
+                        <div class="phase-header"><div class="phase-icon"></div>Phase 3: Consumer Use (EVs & Electronics)</div>
+                        <div class="phase-content">
+                            <div class="analysis-grid">
+                                <div class="analysis-card">
+                                    <h4>Social Science Perspective</h4>
+                                    <p><strong>Paradox of Progress:</strong></p>
+                                    <ul>
+                                        <li>Environmental benefits (reduced CO₂) vs. social harm</li>
+                                        <li>Consumer awareness gap about supply chain impacts</li>
+                                        <li>Climate justice vs. economic justice tension</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Design Thinking Analysis</h4>
+                                    <ul>
+                                        <li><strong>Clarify:</strong> Consumers want both environmental AND ethical products</li>
+                                        <li><strong>Ideate:</strong> How might we enable conscious consumption?</li>
+                                        <li><strong>Develop:</strong> Ethical labeling systems, alternative materials</li>
+                                        <li><strong>Implement:</strong> Consumer education + industry pressure</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Governmental Strategy</h4>
+                                    <p><strong>Policy Balance:</strong></p>
+                                    <ul>
+                                        <li>Maintain EV incentives while pushing ethical sourcing</li>
+                                        <li>Consumer right-to-know legislation</li>
+                                        <li>Research funding for cobalt alternatives</li>
+                                        <li>Green procurement standards for government</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lifecycle-card disposal">
+                        <div class="phase-header"><div class="phase-icon"></div>Phase 4: End-of-Life & Disposal</div>
+                        <div class="phase-content">
+                            <div class="analysis-grid">
+                                <div class="analysis-card">
+                                    <h4>Social Science Perspective</h4>
+                                    <p><strong>Emerging Justice Concerns:</strong></p>
+                                    <ul>
+                                        <li>Electronic waste disproportionately affects developing nations</li>
+                                        <li>Battery recycling facilities often in marginalized communities</li>
+                                        <li>Long-term environmental impacts still unknown</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Design Thinking Analysis</h4>
+                                    <ul>
+                                        <li><strong>Clarify:</strong> Current disposal methods may create new problems</li>
+                                        <li><strong>Ideate:</strong> How might we create circular economy for batteries?</li>
+                                        <li><strong>Develop:</strong> Recycling technology, design for disassembly</li>
+                                        <li><strong>Implement:</strong> Closed-loop manufacturing systems</li>
+                                    </ul>
+                                </div>
+                                <div class="analysis-card">
+                                    <h4>Governmental Strategy</h4>
+                                    <p><strong>Future-Proofing Policies:</strong></p>
+                                    <ul>
+                                        <li>Extended producer responsibility laws</li>
+                                        <li>Battery recycling infrastructure investment</li>
+                                        <li>International e-waste prevention treaties</li>
+                                        <li>Circular economy incentives</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Key Insights</div>
+                <div class="insights">
+                    <div class="insight social">
+                        <h3>Social Science Insight</h3>
+                        <p>Lithium batteries perpetuate environmental racism and economic inequality, requiring justice-centered solutions</p>
+                    </div>
+                    <div class="insight design">
+                        <h3>Design Thinking Insight</h3>
+                        <p>The problem is solvable through user-centered design that prioritizes both climate and community needs</p>
+                    </div>
+                    <div class="insight strategy">
+                        <h3>Strategy Insight</h3>
+                        <p>Requires coordinated global governance, not just market-based solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Integrated Conclusion</div>
+                <div class="conclusion-flex">
+                    <div class="conclusion-text">
+                        Lithium batteries are currently <strong>neither fully sustainable nor ethical</strong> due to the human cost and environmental damage in cobalt mining, but they <strong>can become both</strong> through systematic hybrid solutions that address social justice, design innovation, and policy reform simultaneously.
+                    </div>
+                    <img src="battery_bg.jpg" alt="Battery Conclusion Visual" class="conclusion-img" />
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Solutions Framework</div>
+                <img src="solutions_bg.jpg" alt="Solutions Framework Visual" class="solutions-framework-img">
+                <div class="solutions-grid">
+                    <div>
+                        <h3>Immediate Impact Solutions</h3>
+                        <div class="solution-card soln-red">
+                            <div class="issue">Issue: Child Labor</div>
+                            <div class="solution">Incentivize Education: Keeps children in school and out of hazardous work</div>
+                        </div>
+                        <div class="solution-card soln-red">
+                            <div class="issue">Issue: Poverty Wages</div>
+                            <div class="solution">Fair Trade: Raises worker pay to a living wage</div>
+                        </div>
+                        <div class="solution-card soln-red">
+                            <div class="issue">Issue: Safety Hazards</div>
+                            <div class="solution">Safety Equipment: Provides protection to prevent workplace injuries</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Systematic Reform Solutions</h3>
+                        <div class="solution-card soln-blue">
+                            <div class="issue">Issue: Supply Chain Opacity</div>
+                            <div class="solution">Blockchain Tracking: Makes supply chains transparent and traceable</div>
+                        </div>
+                        <div class="solution-card soln-blue">
+                            <div class="issue">Issue: Economic Dependence</div>
+                            <div class="solution">Job Diversification: Creates new job opportunities beyond mining</div>
+                        </div>
+                        <div class="solution-card soln-blue">
+                            <div class="issue">Issue: Environmental Damage</div>
+                            <div class="solution">Clean Tech: Reduces pollution and environmental harm</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Innovation-Driven Solutions</h3>
+                        <div class="solution-card soln-green">
+                            <div class="issue">Issue: Cobalt Dependence</div>
+                            <div class="solution">Alternative Materials R&D: Finds safer substitutes for cobalt</div>
+                        </div>
+                        <div class="solution-card soln-green">
+                            <div class="issue">Issue: Waste Generation</div>
+                            <div class="solution">Design for Circularity: Enables product reuse and recycling</div>
+                        </div>
+                        <div class="solution-card soln-green">
+                            <div class="issue">Issue: Global Inequality</div>
+                            <div class="solution">Equitable Benefit Sharing: Ensures fair distribution of benefits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="call-to-action">
+                    <div class="cta-header-group">
+                        <h2>Call to Action</h2>
+                        <p>The path to truly sustainable and ethical lithium batteries requires <strong>hybrid thinking</strong> that integrates environmental justice, economic equity, and design innovation. We cannot achieve climate goals at the expense of human rights.</p>
+                    </div>
+                    <br>
+                    <p class="cta-subtext"><strong>What you can do:</strong></p>
+                    <div class="cta-actions-grid">
+                        <div class="cta-action-box">Demand supply chain transparency from tech companies</div>
+                        <div class="cta-action-box">Support fair trade certification for electronics</div>
+                        <div class="cta-action-box">Advocate for corporate accountability legislation</div>
+                        <div class="cta-action-box">Invest in cobalt alternative research</div>
+                        <div class="cta-action-box">Raise awareness about environmental racism</div>
+                    </div>
+                    <br>
+                    <p><em>The future of sustainable technology depends on justice-centered solutions that benefit both our planet and its people.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
